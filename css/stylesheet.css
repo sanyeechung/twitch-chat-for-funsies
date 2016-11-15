@@ -57,7 +57,7 @@ a:link {
 
 .svg-roomlist {
   float: left;
-  fill: purple;
+  fill: tomato;
   vertical-align: middle;
   position: absolute;
 }
@@ -70,7 +70,7 @@ a:link {
 
 .chat-interface {
   width: 340px;
-  /*border: 1px solid blue;*/
+  /*border: 1px solid tomato;*/
   position: absolute;
   bottom: 0;
   margin-bottom: 10px;
@@ -80,9 +80,94 @@ a:link {
 .chat-textarea {
   display: block;
   width: 100%;
-  /*border: 1px solid green;*/
   box-sizing: border-box;
 }
+
+textarea {
+  font-size: 12px;
+}
+
+textarea:focus {
+  border: 1px solid tomato;
+}
+
+/*-----------------------------*/
+
+.emoticons-box {
+  width: 300px;
+  /*height: 96px;*/
+  max-height: 500px;
+  background: white;
+  /*padding: 10px;*/
+  text-align: center;
+  position: absolute;
+  bottom: 120px;
+  right: 20px;
+  border: 1px solid #ccc;
+  /*display: inline;*/
+}
+
+
+.emoticons {
+  padding-top: 10px;
+}
+
+.emoticons li {
+  height: 30px;
+  width: 30px;
+  margin: 0px 5px 5px 5px;
+  background: #ebebeb;
+  display:inline-block;
+
+}
+
+.emoticons li:hover {
+  background: #ccc;
+  cursor: pointer;
+}
+
+.emoticons-links li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  cursor: default;
+  display: inline-block;
+
+}
+
+
+.emoticons-links {
+  font-size: 12px;
+  text-align: left;
+  border-top: 1px solid #eee;
+  width: 100%;
+  /*padding: 5px;*/
+
+}
+
+.emoticons-links a {
+  padding: 0 10px;
+  line-height: 30px;
+  display: inline-block;
+  margin-top: -1px;
+  text-decoration: none;
+  /*float:left;*/
+}
+
+.emoticons-links a:hover {
+  color: tomato;
+  border-top: 1px solid tomato;
+  cursor: pointer;
+}
+.emoticons-links a:active {
+  color: tomato;
+  box-sizing: border-box;
+  border-top: 1px solid tomato;
+  cursor: pointer;
+}
+
+
+/*-----------------------*/
 
 /*.chat-form {
   width: 300px;
@@ -92,20 +177,24 @@ a:link {
 .button {
   display:inline-block;
   margin: 5px;
-  fill: purple;
+  fill: tomato;
 }
 
-.submit-button {
+button {
   /*right:0;
   bottom: 0;
   position: absolute;*/
   padding: 8px 10px;
   float:right;
   color: white;
-  background: purple;
+  background: tomato;
   border: none;
   /*display: block;*/
   outline: none;
+}
+
+button:hover {
+  background: #000;
 }
 
 .emotes {
@@ -114,7 +203,7 @@ a:link {
   top: 10px;
   right: 20px;
   color: grey;
-  /*border: 1px solid orange;*/
+  /*border: 1px solid tomato;*/
 }
 
 .svg-emoticons {
@@ -125,6 +214,8 @@ a:link {
   fill: #333;
 }
 
+
+
 .last-container {
   display: inline-block;
   /*border: 1px solid red;*/
@@ -132,11 +223,13 @@ a:link {
   padding: 0 10px;
 
 }
+
+.clearfix:before,
 .clearfix:after {
      visibility: hidden;
      display: block;
      font-size: 0;
-     content: " ";
+     content: "\a0 ";
      clear: both;
      height: 0;
      }
