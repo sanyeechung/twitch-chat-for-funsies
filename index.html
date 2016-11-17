@@ -2,9 +2,12 @@
   <html>
     <head>
       <link rel="stylesheet" href="css/stylesheet.css">
+
+
     </head>
 
     <body>
+
       <div class="chat">
 
         <div class="header">
@@ -25,19 +28,19 @@
 
         <div class="emoticons-box">
           <div class="emoticons clearfix">
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+          <ul id="emoteList">
+            <li title="emote1"></li>
+            <li title="emote2"></li>
+            <li title="emote3"></li>
+            <li title="emote4"></li>
+            <li title="emote5"></li>
+            <li title="emote6"></li>
+            <li title="emote7"></li>
+            <li title="emote8"></li>
+            <li title="emote9"></li>
+            <li title="emote10"></li>
+            <li title="emote11"></li>
+            <li title="emote12"></li>
           </ul>
         </div>
 
@@ -60,7 +63,7 @@
               <textarea type="text" name="chat-form" class="chat-form clearfix" placeholder="Send a message"></textarea>
 
               <span class="emotes button">
-              <a href="http://www.sanyeechung.com">
+              <a href="jquery.com">
                 <svg class="svg-emoticons" height="16px" version="1.1" viewBox="0 0 16 16" width="16px" x="0px" y="0px">
                   <path clip-rule="evenodd" d="M6.71428571,5.14285714 L5,5.14285714 L5,6.85714286 L6.71428571,6.85714286 L6.71428571,5.14285714 L6.71428571,5.14285714 Z M12,0 L4,0 L0,4 L0,12 L4,16 L12,16 L16,12 L16,4 L12,0 L12,0 Z M5,2 L2,5 L2,11 L5,14 L11,14 L14,11 L14,5 L11,2 L5,2 Z M9.28571429,6.85714286 L11,6.85714286 L11,5.14285714 L9.28571429,5.14285714 L9.28571429,6.85714286 L9.28571429,6.85714286 Z M6.00000003,12 L10,12 L11.9999997,9.99999999 L11.9999997,8.99999999 L4.00000003,8.99999999 L4.00000003,9.99999999 L6.00000003,12 Z" fill-rule="evenodd"></path>
                 </svg>
@@ -90,6 +93,10 @@
               <button class="submit-button button">Chat</button>
           </div>
       </div>
-      <script src="index.js"></script>
+
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/index.js"></script>
+
     </body>
   </html>
