@@ -23,24 +23,24 @@ $( "span.emotes a" ).click(function( e ) {
 
 //on hover, show emote title in a box below the emote aka TOOLTIP
 $("#emoteList li").each(function() {
-  $(this).tooltip()
+  $(this).tooltip({
+    show: {
+      effect: 'fade',
+      duration: 0
+    },
+    hide: {
+      effect: 'fade',
+      duration: 0
+    },
+    position: {
+      my: 'center',
+      at: 'top+50'
+    }
+  })
   $(".ui-helper-hidden-accessible").hide();
 });
 
-// $("#emoteList li").each(function() {
-//   $(this).mouseenter(function(e){
-//     $(this)
-//     .after($hoverTextBox);
-//     $("#hoverTextBox").css({"background-color":"#333","padding":"10px",'display':'inline-block','font-size':'12px','color':'#fff'})
-//     .text($(this).attr("id"));
-//     console.log($("#emoteList").val());
-//   });
-//   $(this).mouseleave(function(e){
-//     $hoverTextBox
-//     .css({'display':'none'});
-//     console.log($("#emoteList").val());
-//   });
-// });
-
 //listen for click on emote
 //when emote is clicked, insert emote name into chat textarea
+//if space before cursor, then insert text without space before
+//else insert text with space before 
