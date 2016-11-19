@@ -1,0 +1,231 @@
+
+$font-size: 12px;
+$default-padding: 15px;
+$color-light-grey: #ebebeb;
+$color-med-grey: #ccc;
+$color-dark-grey: #333;
+$primary-border:  1px solid $color-med-grey;
+$primary-color: tomato;
+
+@mixin hover-darken-primary-color () {
+  &:hover {
+    fill: darken($primary-color,20%);
+  }
+}
+
+* {
+ margin:0;
+ padding:0;
+ box-sizing: border-box;
+}
+
+body {
+ font-family: arial, sans-serif;
+ a:link {
+   text-decoration: none;
+ }
+}
+
+textarea {
+ border: $primary-border;
+ overflow: auto;
+ display: block;
+ height: 50px;
+ width: 300px;
+ margin: $default-padding auto;
+ padding: $default-padding - 5px;
+ resize: none;
+}
+
+.header {
+ border-bottom: $primary-border;
+ padding: $default-padding $default-padding*2;
+ width: 100%;
+ height: 50px;
+
+}
+
+.chat {
+ width: 340px;
+ height: 100vh;
+ background: $color-light-grey;
+ position: fixed;
+ right: 0;
+}
+
+.roomtitle {
+ font-size: $font-size;
+ text-align: center;
+ }
+
+.svg-roomlist {
+ float: left;
+ fill: $primary-color;
+ vertical-align: middle;
+ position: absolute;
+ @include hover-darken-primary-color()
+}
+
+.default-chat {
+ font-size: $font-size;
+ color: $color-dark-grey;
+ margin: 20px 0 0 15px;
+}
+
+.chat-interface {
+ width: 340px;
+ position: absolute;
+ bottom: 0;
+ margin-bottom: $default-padding;
+ padding: 0 5px;
+}
+
+.chat-textarea {
+ display: block;
+ width: 100%;
+}
+
+textarea {
+ font-size: $font-size;
+ &:focus {
+   border: 1px solid $primary-color;
+ }
+}
+
+.emoticons-box {
+ width: 300px;
+ max-height: 500px;
+ background: white;
+ text-align: center;
+ position: absolute;
+ bottom: 130px;
+ right: 20px;
+ border: $primary-border;
+}
+
+.emoticons {
+ padding-top: 10px;
+ height:auto;
+ li {
+  height: 30px;
+  width: 30px;
+  margin: 0px 5px 10px 5px;
+  background: $color-light-grey;
+  display:inline-block;
+  &:hover {
+    background: $color-med-grey;
+    cursor: pointer;
+  }
+ }
+}
+
+
+.emoticons-links {
+ height: 30px;
+ font-size: $font-size;
+ text-align: left;
+ border-top: $primary-border;
+ width: 100%;
+ ul,
+ li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  cursor: default;
+  display: inline-block;
+  }
+  a {
+   padding: 0 $default-padding;
+   line-height: 30px;
+   display: inline-block;
+   margin-top: -1px;
+   text-decoration: none;
+   color: #000;
+   &:hover,
+   &.active {
+     color: $primary-color;
+     border-top: 1px solid $primary-color;
+     cursor: pointer;
+   }
+  }
+
+}
+
+button {
+  display:inline-block;
+  fill: $primary-color;
+  padding: 10px 10px;
+  float:right;
+  color: white;
+  background: $primary-color;
+  border: none;
+  outline: none;
+  &:hover {
+      background: lighten($primary-color, 10%);
+ }
+}
+
+.emotes {
+ float: right;
+ position: absolute;
+ top: 20px;
+ right: 25px;
+ fill: $color-med-grey;
+ &:hover {
+   fill: $color-dark-grey;
+ }
+}
+
+.ui-tooltip {
+ position:relative;
+ background: #000;
+ padding: 5px 10px;
+ font-size: $font-size;
+ overflow: visible !important;
+ color: #fff;
+ text-align: center;
+ opacity: 0.8;
+ display: inline-block;
+ ::before {
+   width: 0;
+   height: 0;
+   content:"\A";
+   position:absolute;
+   border: 5px solid;
+   border-color: transparent transparent #000 transparent;
+   bottom: 100%;
+   left: 50%;
+   margin-left: -5px;
+   z-index: 1;
+ }
+}
+
+
+.ui-tooltip-content {
+ max-width: 100px;
+ width: auto !important;
+}
+
+.last-container {
+ display: inline-block;
+ width: 100%;
+ padding: 0 15px;
+ span {
+   margin-right: $default-padding - 5px;
+   svg {
+     fill: $primary-color;
+   @include hover-darken-primary-color()
+   }
+ }
+
+}
+
+.clearfix:before,
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: "\a0 ";
+    clear: both;
+    height: 0;
+    }

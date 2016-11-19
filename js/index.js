@@ -1,12 +1,11 @@
 
-
+var $emoteList = $("#emoteList li");
 var $emoticonsBox = $(".emoticons-box");
-var $emotesIcon = $(".emotes a");
-var $hoverTextBox = $("<div id='hoverTextBox'>&nbsp;</div>");
+var $textArea = $("#chat-form")
 
 //hide emote box
 $(document).ready( function() {
-  $("div.emoticons-box").hide();
+  $emoticonsBox.hide();
   console.log("hidden");
 });
 
@@ -14,7 +13,7 @@ $(document).ready( function() {
 //toggle show or hide for emotes box when smiley is clicked on
 $( "span.emotes a" ).click(function( e ) {
   e.preventDefault();
-  $("div.emoticons-box").toggle();
+  $emoticonsBox.toggle();
   console.log("prevented");
 });
 
@@ -22,7 +21,7 @@ $( "span.emotes a" ).click(function( e ) {
 
 
 //on hover, show emote title in a box below the emote aka TOOLTIP
-$("#emoteList li").each(function() {
+$emoteList.each(function() {
   $(this).tooltip({
     show: {
       effect: 'fade',
@@ -41,6 +40,15 @@ $("#emoteList li").each(function() {
 });
 
 //listen for click on emote
+$emoteList.each( function() {
+  $(this).click( function() {
+    var $emoteIconTitle = $(this).attr("title");
+    $textArea.val($textArea.val() + $emoteIconTitle)
+    .focus();
+    console.log($emoteIconTitle);
+  })
+});
+
 //when emote is clicked, insert emote name into chat textarea
 //if space before cursor, then insert text without space before
-//else insert text with space before 
+//else insert text with space before
